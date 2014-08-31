@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="puppetHero">
+<head>
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.slate.min.css" />
+    <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css" />
+
+    <!-- SPELLS -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-route.min.js"></script>
+
+    <!-- POTIONS -->
+    <script src="lib/jquery-1.11.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- STASH -->
+    <script src="js/app.js"></script>
+    <script src="js/combat-controller.js"></script>
+    <script src="js/home-controller.js"></script>
+    <script src="js/noncombat-controller.js"></script>
+
+    <!-- ARMOR -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body ng-controller="homeController">
+    <!-- HEADER AND NAVBAR -->
+    <header>
+        <nav role="navigation" class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Puppet Hero</a>
+            </div>
+            <!-- Collection of nav links and other content for toggling -->
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-bank"></i> Home</a></li>
+                    <li><a href="#combat"><i class="fa fa-shield"></i> Combat gear</a></li>
+                    <li><a href="#noncombat"><i class="fa fa-user"></i> Non combat gear</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <div id="main">
+            <div ng-view></div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="well">
+                <p class="text-muted">{{ footer }}</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

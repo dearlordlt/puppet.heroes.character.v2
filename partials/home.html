@@ -1,0 +1,31 @@
+<div class="jumbotron text-center">
+    <h1>Home page <i class="fa fa-institution"></i></h1>
+    <p><a href="javascript:void(0);" ng-click="rollDice()">{{ message }}</a></p>
+    <div style="margin:10px;">
+        <img src="img/dice{{dice1}}.jpg" />
+        <img src="img/dice{{dice2}}.jpg" />
+        <img src="img/dice{{dice3}}.jpg" />
+    </div>
+    <kbd>Current roll is {{ dice1 + dice2 + dice3 }}</kbd>&nbsp;
+    <kbd>High Score: <b>{{ highScore }}</b></kbd>&nbsp;
+    <kbd>Rolls: {{ rolls }}</kbd>
+    <div ng-show="hola" style="margin:10px;" class="alert alert-success" role="alert">
+        Gratz! you have rolled 18 in {{ rolls }} tries.
+        <form class="form-inline" role="form">
+            <button ng-click="newGame()" type="button" class="btn btn-success">Play again</button>
+            <div id="gameNameDiv" class="form-group">
+                <input type="text" class="form-control" id="gameName" placeholder="Enter your name">
+            </div>
+            <button ng-click="SaveScore()" type="button" id="submitScore" class="btn btn-primary">Save Score</button>
+        </form>
+        <br>
+        <ul class="list-group">
+            <a class="list-group-item" ng-repeat="scores in scoreTable | filter:q as results">
+                [{{$index + 1}}] {{scores.name}} : {{scores.score}} - {{scores.date}}.
+            </a>
+            <a class="list-group-item" ng-if="results.length == 0">
+                <strong>No results found...</strong>
+            </a>
+        </ul>
+    </div>
+</div>
