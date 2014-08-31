@@ -3,7 +3,7 @@ puppetHero.controller('homeController', function($scope, User, $http, $templateC
     $scope.User = User;
 
     $scope.message = 'App is under construction, roll some dices while we working.';
-    $scope.footer = 'I`m epic footer message!';
+    $scope.footer = {first:'I`m epic footer message!', second:"another epic message"};
 
     $scope.dice1 = 1;
     $scope.dice2 = 1;
@@ -13,7 +13,7 @@ puppetHero.controller('homeController', function($scope, User, $http, $templateC
     $scope.rolls = 0;
 
     $scope.rollDice = function () {
-        if($scope.highScore >= 18) {
+        if($scope.highScore >= 3) {
             $scope.hola = true;
             return;
         }
@@ -39,8 +39,7 @@ puppetHero.controller('homeController', function($scope, User, $http, $templateC
     };
 
     $scope.SaveScore = function() {
-        if(
-        $("#gameName").val() == "") {
+        if($("#gameName").val() == "") {
             $("#gameNameDiv").attr('class', 'form-group has-error');
             return;
         }
