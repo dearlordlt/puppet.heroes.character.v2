@@ -10,16 +10,22 @@ angular.module('puppetHero').config(function($routeProvider) {
             controller  : 'homeController'
         })
 
-        // route for the about page
+        // route for the combat page
         .when('/combat', {
             templateUrl : 'partials/combat.html',
             controller  : 'combatController'
         })
 
-        // route for the contact page
+        // route for the non-combat page
         .when('/noncombat', {
             templateUrl : 'partials/noncombat.html',
             controller  : 'noncombatController'
+        })
+
+        // route for the talents page
+        .when('/talents', {
+            templateUrl : 'partials/talents.html',
+            controller  : 'talentsController'
         });
 });
 
